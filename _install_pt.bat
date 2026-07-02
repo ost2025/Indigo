@@ -1,0 +1,14 @@
+python -m pip install wheel
+python -m pip install setuptools==68.0.0
+python -m pip install waitress
+python -m pip install flasgger
+python -m pip install psycopg2
+python -m pip install sqlalchemy
+python -m pip install numpy
+python -m pip install celery
+python -m pip install marshmallow
+python -m pip install redis
+python -m pip install flask_httpauth
+python -m pip install pyparsing
+python -m pip install requests
+python -m pip install pillow

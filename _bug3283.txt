@@ -1,0 +1,66 @@
+"Unknown single bond stereo type"
+
+throw exception
+C:\DISK_D\Projects\Indigo\core\render2d\src\render_internal_bonds.cpp  Ln:429
+
+https://lifescience.opensource.epam.com/KetcherDemo/index.html
+
+request:
+{
+	"options": {
+		"aromaticity-model": "generic",
+		"aromatize-skip-superatoms": true,
+		"bond-length": 40,
+		"bond-length-unit": "px",
+		"dearomatize-on-load": false,
+		"gross-formula-add-isotopes": true,
+		"gross-formula-add-rsites": true,
+		"ignore-no-chiral-flag": false,
+		"ignore-stereochemistry-errors": true,
+		"image-resolution": 72,
+		"mass-skip-error-on-pseudoatoms": false,
+		"render-bond-spacing": 0.15,
+		"render-bond-thickness": 2,
+		"render-bond-thickness-unit": "px",
+		"render-coloring": true,
+		"render-font-size": 13,
+		"render-font-size-sub": 13,
+		"render-font-size-sub-unit": "px",
+		"render-font-size-unit": "px",
+		"render-hash-spacing": 1.2,
+		"render-hash-spacing-unit": "px",
+		"render-label-mode": "terminal-hetero",
+		"render-output-format": "svg",
+		"render-stereo-bond-width": 6,
+		"render-stereo-bond-width-unit": "px",
+		"render-stereo-style": "old",
+		"smart-layout": true
+	},
+	"struct": "{\n    \"root\": {\n        \"nodes\": [\n            {\n                \"$ref\": \"mol0\"\n            }\n        ],\n        \"connections\": [],\n        \"templates\": []\n    },\n    \"mol0\": {\n        \"type\": \"molecule\",\n        \"atoms\": [\n            {\n                \"label\": \"C\",\n                \"location\": [\n                    7.1249999999999964,\n                    -4.8299583827088535,\n                    0\n                ]\n            },\n            {\n                \"label\": \"C\",\n                \"location\": [\n                    7.625394552681627,\n                    -6.370041617291149,\n                    0\n                ]\n            },\n            {\n                \"label\": \"C\",\n                \"location\": [\n                    7.9346911856641,\n                    -5.423851917556219,\n                    0\n                ]\n            },\n            {\n                \"label\": \"C\",\n                \"location\": [\n                    6.624605447318366,\n                    -6.370041617291149,\n                    0\n                ]\n            },\n            {\n                \"label\": \"C\",\n                \"location\": [\n                    6.315308814335896,\n                    -5.423851917556219,\n                    0\n                ]\n            }\n        ],\n        \"bonds\": [\n            {\n                \"type\": 1,\n                \"atoms\": [\n                    0,\n                    4\n                ]\n            },\n            {\n                \"type\": 2,\n                \"atoms\": [\n                    4,\n                    3\n                ]\n            },\n            {\n                \"type\": 1,\n                \"atoms\": [\n                    3,\n                    1\n                ]\n            },\n            {\n                \"type\": 2,\n                \"atoms\": [\n                    1,\n                    2\n                ]\n            },\n            {\n                \"type\": 1,\n                \"atoms\": [\n                    2,\n                    0\n                ]\n            }\n        ],\n        \"sgroups\": [\n            {\n                \"type\": \"MUL\",\n                \"atoms\": [\n                    0,\n                    3,\n                    4\n                ],\n                \"mul\": 11\n            }\n        ]\n    }\n}"
+}
+
+
+Responce:
+{
+	"error": "IndigoException: molecule render internal: Unknown single bond stereo type"
+}
+
+
+Test:
+C:\DISK_D\Projects\Indigo\api\tests\integration\tests\rendering\render_molfile_3283.py
+
+Run:
+python api/tests/integration/test.py -t 1 -p render_molfile_3283.py
+
+python -m pip uninstall epam_indigo -y
+python -m pip install ./api/python/dist/epam_indigo-1.44.0.dev1-py3-none-win_amd64.whl
+
+env for tests
+https://lifescience.opensource.epam.com/KetcherDemo/index.html
+https://lifescience.opensource.epam.com/KetcherDemoSA/index.html
+https://rc.test.lifescience.opensource.epam.com/KetcherDemo/index.html
+
+cmake .. -DBUILD_INDIGO=ON -DBUILD_INDIGO_WRAPPERS=ON -DBUILD_INDIGO_UTILS=ON -G "Visual Studio 17 2022" -A x64
+
+
+https://github.com/epam/Indigo/pull/3649 -- fix for tests
